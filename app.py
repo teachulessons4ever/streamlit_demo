@@ -40,6 +40,16 @@ hobbies = ["Dancing", "Reading", "Sports", "Gaming",
 
 hobby = st.selectbox("Select your main hobby:", hobbies)
 st.write("Your main hobby is:", hobby)
+# Multiselect - lets the user pick more than one hobby
+selected = st.multiselect("Pick all your hobbies:", hobbies)
+
+# Loop through the selected hobbies and display each one
+if selected:
+    st.write(f"You selected {len(selected)} hobbies:")
+    for h in selected:
+        st.write(f"  - {h}")
+else:
+    st.info("No hobbies selected yet.")
 
 
 # Slider
